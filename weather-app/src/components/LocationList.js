@@ -18,6 +18,10 @@ const LocationList = () => {
         setFormSubmit(formValue)
     }
 
+    const handleFormReset = () => {
+        setLocations('')
+    }
+
     useEffect(() => {
      async function fetchLocation() {
         const config = {
@@ -45,7 +49,9 @@ fetchLocation()
         </div>
         :
         <div>
-             <p>{locations.location.name}</p>
+             <p>In {locations.location.name}, the condition is {locations.current.condition.text.toLowerCase()} with a temperature of<span> </span>
+             {locations.current.temp_c} degree celsius.</p>
+             <button onClick={handleFormReset}>search different location</button>
         </div>
         }
         </>
