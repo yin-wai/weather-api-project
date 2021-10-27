@@ -3,16 +3,18 @@ import axios from 'axios'
 import LocationCard from './LocationCard'
 
 const LocationList = () => {
-    const [locations, setLocations] = useState([{
-        "name": "Paris",
-        "region": "Ile-de-France",
-        "country": "France",
-        "lat": 48.87,
-        "lon": 2.33,
-        "tz_id": "Europe/Paris",
-        "localtime_epoch": 1635330530,
-        "localtime": "2021-10-27 12:28"
-    }])
+    const [locations, setLocations] = useState([
+        {
+            "name": "Paris",
+            "region": "Ile-de-France",
+            "country": "France",
+            "lat": 48.87,
+            "lon": 2.33,
+            "tz_id": "Europe/Paris",
+            "localtime_epoch": 1635338775,
+            "localtime": "2021-10-27 14:46"
+        }
+    ])
     console.log(locations)
     useEffect(() => {
      async function fetchLocation() {
@@ -28,15 +30,18 @@ const LocationList = () => {
 const response = await axios(config)
 setLocations(response.data)
 console.log(response.data)
+console.log(locations)
 }
 fetchLocation()
 }, [])
     return (
         <div>
             <ul>
-                {locations.map((location) => (
-                <LocationCard {...location} />
-                ))}
+            
+                <li>
+                    <p>{locations.location.name}</p>
+                </li>
+            
             </ul>
         </div>
     )
