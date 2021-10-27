@@ -1,5 +1,5 @@
-const LocationCard = ({name}) => {
-    console.log()
+const LocationCard = ({name, }) => {
+    console.log(name)
     return (
         <div>
             <p>{name}</p>
