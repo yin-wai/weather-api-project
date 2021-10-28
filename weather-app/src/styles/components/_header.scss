@@ -7,20 +7,6 @@ header {
   font-size: calc(10px + 2vmin);
   color: red;
   height: 30%;
-  a,
-  button {
-    color: red;
-    border: none;
-    background: none;
-    font-size: inherit;
-    font-family: inherit;
-    text-decoration: underline;
-
-    &:hover {
-      color: $interactive;
-    }
-  }
-
   nav {
     display: flex;
     width: 80%;

@@ -43,10 +43,11 @@ fetchLocation()
 
     return (
         <>
+        
         {!locations ?
-        <div>
+        <div className='astronomy'>
         <form onSubmit={handleSubmit}>
-            <input onChange={handleLocationChange}></input>
+            <input placeholder='Choose your location' onChange={handleLocationChange}></input>
         </form>
         </div>
         :
@@ -58,6 +59,7 @@ fetchLocation()
              <button onClick={handleFormReset}>search different location</button>
         </div>
         }
+       
         </>
     )
 }

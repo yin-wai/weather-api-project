@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
-    <div>
+    <>
+    <nav>
       <ul>
         <li>
           <Link to='/astronomy.json'>Astronomy</Link>
@@ -11,7 +12,8 @@ const Nav = () => {
           <Link to='/'>Home</Link>
         </li>
       </ul>
-    </div>
+    </nav>
+    </>
   )
 }
 
