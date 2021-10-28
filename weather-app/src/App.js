@@ -9,7 +9,7 @@ import Home2 from './pages/Home2';
 function App() {
   return (
     <Router>
-    <section>
+    <section className='app-section'> 
       <header>
         <Nav />
       </header>
