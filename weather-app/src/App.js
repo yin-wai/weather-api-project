@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-
+import History from './pages/History'
 import Nav from './components/Nav'
 import Astronomy from './pages/Astronomy';
 import './App.css';
@@ -16,7 +16,9 @@ function App() {
       <main>
         <Switch>
           <Route path='/astronomy.json' component={Astronomy} />
+          <Route path='/history.json' component={History} />
           <Route path='/' component={Home2} />
+          
         </Switch>
       </main>
     </section>

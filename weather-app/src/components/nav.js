@@ -11,6 +11,9 @@ const Nav = () => {
         <li>
           <Link to='/astronomy.json'>Astronomy</Link>
         </li>
+        <li>
+          <Link to='/history.json'>Historical</Link>
+        </li>
      </ul>
     </nav>
     </>
