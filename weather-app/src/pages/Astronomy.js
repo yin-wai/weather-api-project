@@ -43,23 +43,23 @@ fetchLocation()
 
     return (
         <>
-        
-        {!locations ?
         <div className='astronomy'>
+        {!locations ?
+        <div >
         <form onSubmit={handleSubmit}>
             <input placeholder='Choose your location' onChange={handleLocationChange}></input>
         </form>
         </div>
         :
-        <div>
+        <div className='astronomy-result'>
              <p>
-               In {locations.location.name}, the sun will rise at {locations.astronomy.astro.sunrise} and set at {locations.astronomy.astro.sunset}. The moon will rise at {locations.astronomy.astro.moonrise} and set at {locations.astronomy.astro.moonset}. 
-               The moon cylce is in its {locations.astronomy.astro.moon_phase}.
+               In {locations.location.name}, the sun will rise at {locations.astronomy.astro.sunrise.toLowerCase()} and set at {locations.astronomy.astro.sunset.toLowerCase()}. The moon will rise at {locations.astronomy.astro.moonrise.toLowerCase()} and set at {locations.astronomy.astro.moonset.toLowerCase()}. 
+               The moon cylce is in its {locations.astronomy.astro.moon_phase.toLowerCase()}.
              </p>
-             <button onClick={handleFormReset}>search different location</button>
+             <button onClick={handleFormReset}>Search another location</button>
         </div>
         }
-       
+       </div>
         </>
     )
 }

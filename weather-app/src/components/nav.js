@@ -5,13 +5,13 @@ const Nav = () => {
     <>
     <nav>
       <ul>
+      <li>
+          <Link to='/'>Home</Link>
+        </li>
         <li>
           <Link to='/astronomy.json'>Astronomy</Link>
         </li>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-      </ul>
+     </ul>
     </nav>
     </>
   )

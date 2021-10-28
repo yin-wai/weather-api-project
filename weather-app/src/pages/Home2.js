@@ -65,10 +65,11 @@ fetchLocation()
 
 return (
  <>
+ <div className='home'>
   {!locations ?
     <div>
       <form onSubmit={handleSubmit}>
-        <input type='submit' value='Submit' onClick={handleSubmit}/>
+        <div>
         <input name ='location' value={formSubmit.location} placeholder='Choose your location' onChange={handleLocationChange} />
         <select name='time' value={formSubmit.time} placeholder='Choose your time' onChange={handleLocationChange}>
         <option value='01'>1am</option>
@@ -137,18 +138,23 @@ return (
         <option value='zh_yue'>Yue(Cantonese)</option>
         <option value='zu'>Zulu</option>
         </select>
+        </div>
+        <div>
+        <input type='submit' value='Submit' onClick={handleSubmit}/>
+        </div>
       </form>
     </div>
         :
-    <div>
+    <div className='home-result'>
       <p>
         In {locations.name}, at the moment, the weather is {currentCondition.toLocaleLowerCase()} with a temperature of<span> </span>
         {currentTemp} degree celsius. The forecast for the rest of the day is {forecast.toLocaleLowerCase()}. 
         At {formSubmit.time}:00 the forecast is {timeCondition.toLocaleLowerCase()}. 
       </p>
-      <button onClick={handleFormReset}>search different location</button>
+      <button onClick={handleFormReset}>Search another location</button>
     </div>
     }
+    </div>
    </>
   )
 }
