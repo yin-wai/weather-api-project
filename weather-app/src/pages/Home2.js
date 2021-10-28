@@ -82,7 +82,32 @@ fetchLocation()
         <form onSubmit={handleSubmit}>
             <input type='submit' value='Submit' onClick={handleSubmit}/>
             <input name ='location' value={formSubmit.location} placeholder='Choose your location' onChange={handleLocationChange} />
-            <input name='time' value={formSubmit.time} placeholder='Choose your time' onChange={handleLocationChange} />
+            <select name='time' value={formSubmit.time} placeholder='Choose your time' onChange={handleLocationChange}>
+            <option value='01'>1am</option>
+            <option value='02'>2am</option>
+            <option value='03'>3am</option>
+            <option value='04'>4am</option>
+            <option value='05'>5am</option>
+            <option value='06'>6am</option>
+            <option value='07'>7am</option>
+            <option value='08'>8am</option>
+            <option value='09'>9am</option>
+            <option value='10'>10am</option>
+            <option value='11'>11am</option>
+            <option value='12'>12am</option>
+            <option value='13'>1pm</option>
+            <option value='14'>2pm</option>
+            <option value='15'>3pm</option>
+            <option value='16'>4pm</option>
+            <option value='17'>5pm</option>
+            <option value='18'>6pm</option>
+            <option value='19'>7pm</option>
+            <option value='20'>8pm</option>
+            <option value='21'>9pm</option>
+            <option value='22'>10pm</option>
+            <option value='23'>11pm</option>
+            <option value='00'>12pm</option>
+            </select>
             <select name='language' value={formSubmit.language} placeholder='Choose your language' onChange={handleLocationChange}>
             <option value='bn'>Bengali</option>
             <option value='bg'>Bulgarian</option>
@@ -131,7 +156,7 @@ fetchLocation()
              <p>
                In {locations.name}, at the moment, the weather is {currentCondition.toLocaleLowerCase()} with a temperature of<span> </span>
                {currentTemp} degree celsius. The forecast for the rest of the day is {forecast.toLocaleLowerCase()}. 
-               At {formSubmit.time} the forecast is {timeCondition.toLocaleLowerCase()}. 
+               At {formSubmit.time}:00 the forecast is {timeCondition.toLocaleLowerCase()}. 
              </p>
              <button onClick={handleFormReset}>search different location</button>
         </div>
