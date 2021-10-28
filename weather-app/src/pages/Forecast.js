@@ -15,7 +15,7 @@ const Forecast = () => {
         language: 'eng',
         day: '1',
     })
-    const 
+    
     const handleLocationChange = (event) => {
         const { name, value } = event.target
     setFormSubmit({
@@ -31,8 +31,6 @@ const Forecast = () => {
 
     const handleFormReset = () => {
         setLocations('')
-        setFormSubmit('')
-        setLocationFormValue('')
         setFormSubmit('')
     }
 
@@ -54,8 +52,6 @@ const response = await axios(config)
 const forecastDay = response.data.forecast.forecastday
 console.log('response.data.location', response.data.forecast)
 setLocations(response.data)
-setForecast(forecastDay[0].day.condition.text)
-setHour(forecastDay[0].hour)
 } catch (err) {
     console.log('no weather')
 }

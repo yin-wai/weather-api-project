@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Astronomy from './pages/Astronomy';
 import './App.css';
 import Home2 from './pages/Home2';
+import Forecast from './pages/Forecast'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </header>
       <main>
         <Switch>
+          <Route path='/forecast.json' component={Forecast} />
           <Route path='/astronomy.json' component={Astronomy} />
           <Route path='/' component={Home2} />
         </Switch>
