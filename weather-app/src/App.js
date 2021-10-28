@@ -1,8 +1,6 @@
-
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-// import Home from './pages/Home';
+
 import Nav from './components/Nav'
 import Astronomy from './pages/Astronomy';
 import './App.css';
@@ -11,8 +9,8 @@ import Home2 from './pages/Home2';
 function App() {
   return (
     <Router>
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
         <Nav />
       </header>
       <main>

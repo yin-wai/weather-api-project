@@ -1,0 +1,22 @@
+@mixin flex-list($wrap: true) {
+  &ul,
+  ul {
+    display: flex;
+    @if $wrap {
+      flex-wrap: wrap;
+    }
+    max-width: 100%;
+    list-style: none;
+
+    li {
+      margin: 1rem;
+      flex: 400px 1 1;
+    }
+  }
+}
+
+@mixin border-shadow($color: $dark) {
+  border: $color solid 1px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0.75rem -0.25rem rgba($color, 0.7);
+}
