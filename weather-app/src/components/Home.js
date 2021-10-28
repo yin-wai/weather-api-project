@@ -3,7 +3,7 @@ import axios from 'axios'
 // import LocationCard from './LocationCard'
 // import Api from './helper/Api'
 
-const LocationList = () => {
+const Home = () => {
     const [locations, setLocations] = useState('')
     const [currentCondition, setCurrentCondition] = useState('')
     const [currentTemp, setCurrentTemp] = useState('')
@@ -71,4 +71,4 @@ fetchLocation()
     )
 }
 
-export default LocationList
+export default Home

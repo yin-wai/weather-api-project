@@ -1,11 +1,11 @@
-import LocationList from './components/LocationList';
+import Home from './components/Home';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <LocationList />
+        <Home />
       </header>
     </div>
   );
