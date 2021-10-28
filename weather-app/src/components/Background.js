@@ -1,10 +1,18 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 
+import { getCloudiness, willItRain } from "./helper/getWeather"
+import { willItRain } from "./helper/getWeather"
+import { willItSnow } from "./helper/getWeather"
 import { selectBackground } from "./helper/SelectBackground"
 
 const Background = () => {
     const [weather, setWeather] = useState('')
+    const [formSubmit, setFormSubmit] = useState({
+        location: '',
+        time: '12',
+        language: '',
+      })
 
     useEffect(() => {
         async function fetchLocation() {
@@ -17,27 +25,29 @@ const Background = () => {
       };
       try {
       const response = await axios(config)
-      console.log('response.data.location', response.data.location)
-      console.log('response.data.current.condition.text', response.data.current.condition.text)
-      console.log('response.data.forecast', response.data.forecast.forecastday)
-      const forecastDay = response.data.forecast.forecastday
-      
-      // const hour = forecastDay[0].hour
-      // setTimeCondition(hour[0].condition.text)
-      
-      setForecast(forecastDay[0].day.condition.text)
-      setLocations(response.data.location)
-      setCurrentCondition(response.data.current.condition.text)
-      setCurrentTemp(response.data.current.temp_c)
-      } catch (err) {}
+      setWeather(response.data)
+      } catch (err) {
+          console.log('data unavailable')
+      }
       }
       fetchLocation()
       }, [])
 
+      if (!weather) return null
+      const clouds = getCloudiness(weather.current.cloud)
+      const rain = willItRain(weather.forecast.forecastday[0].day.daily_will_it_rain)
+      const snow = willItSnow(weather.forecast.forecastday[0].day.daily_will_it_snow)
+ 
     return (
         <div id="screen">
-        style={{backgroundImage:`url(${selectBackground(cloudsProp)})`}}        
+        style={{
+            backgroundImage:`url(${selectBackground(cloudsProp)})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            }}        
         </div>
     )
 }
+
+export default Background
 
