@@ -36,7 +36,7 @@ const Background = () => {
 
     return (
         <div id="screen">
-        style={{backgroundImage:`url(${selectBackground})`}}        
+        style={{backgroundImage:`url(${selectBackground()})`}}        
         </div>
     )
 }

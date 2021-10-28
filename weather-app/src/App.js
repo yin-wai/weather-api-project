@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import Home from './pages/Home';
-=======
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Home from './pages/Home';
 import Nav from './components/Nav'
 import Astronomy from './pages/Astronomy';
->>>>>>> da7ae5d175cb7eabd1827f3095a56ed21c607fcf
 import './App.css';
 
 function App() {
