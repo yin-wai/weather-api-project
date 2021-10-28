@@ -7,13 +7,13 @@ const Forecast = () => {
         location: '',
         time: '12',
         language: '',
-        day: '',
+        days: '',
       })
     const [finalFormSubmit, setFinalFormSubmit] = useState({
         location: '',
         time: '',
         language: 'eng',
-        day: '1',
+        days: '1',
     })
     
     const handleLocationChange = (event) => {
@@ -32,10 +32,6 @@ const Forecast = () => {
     const handleFormReset = () => {
         setLocations('')
         setFormSubmit('')
-    }
-
-    const handleNumberChange = (event) => {
-        setFormNumberData(event.target.value)
     }
 
     useEffect(() => {
@@ -64,22 +60,21 @@ fetchLocation()
         {!locations ?
         <div >
         <form onSubmit={handleSubmit}>
-            <input placeholder='Choose your location' onChange={handleLocationChange}></input>
+            <input placeholder='Choose your location' onChange={handleLocationChange} />
+               <input 
+               onChange={handleLocationChange}
+               onWheel={(event) => event.target.blur()}
+               className="selectingForecast"
+               type="number"
+               name="days"
+               min="1"
+               max="3"
+               />
         </form>
         </div>
         :
         <div className='forecast-result'>
-             <p>
-               <form 
-               onChange={handleNumberChange}
-               onWheel={(event) => event.target.blur()}
-               className="selectingForecast"
-               type="number"
-               name="number"
-               min="1"
-               max="3"
-               />
-             </p>
+            <p></p>
              <button onClick={handleFormReset}>Search another location</button>
         </div>
         }

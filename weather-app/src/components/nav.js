@@ -11,6 +11,9 @@ const Nav = () => {
         <li>
           <Link to='/astronomy.json'>Astronomy</Link>
         </li>
+        <li>
+          <Link to='./forecast.json'>Forecast</Link>
+        </li>
      </ul>
     </nav>
     </>
