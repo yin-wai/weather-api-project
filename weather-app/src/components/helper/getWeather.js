@@ -8,6 +8,18 @@ export const getCloudiness = (clouds) => {
     }
 }
 
+export const getRainlevel = (rainLevel) => {
+    if (rainLevel >= 0) {
+        return 'drizzile'
+    }  else if (rainLevel >= 0.5) {
+        return 'light-showers'
+    }  else if (rainLevel >= 2) {
+        return 'raining'
+    } else {
+        return 'heavy rain'
+    }
+}
+
 export const willItRain = (rain) => {
     if (rain === 0 ) {
         return 'no-rain'
