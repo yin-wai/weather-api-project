@@ -20,7 +20,7 @@ section {
 main {
   font-size: 2rem;
   text-align: center;
-  height: 70%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +35,7 @@ a {
   color: red;
 
   &:hover {
-    color: black;
+    color: blue;
   }
 }
 
