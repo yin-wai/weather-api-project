@@ -64,9 +64,9 @@ fetchHour()
 
 
 // edit below
-export const register = (data) => {
-  return makeAxiosRequest('/register', data)
-}
+// export const register = (data) => {
+//   return makeAxiosRequest('/register', data)
+// }
 
 const makeAxiosRequest = async (url, data) => {
   const config = getAxiosRequestConfig(url, data)
