@@ -1,3 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+@import "./components/basic";
+@import "./components/colours";
+@import "./components/header";
+@import "./components/_mixins.scss";

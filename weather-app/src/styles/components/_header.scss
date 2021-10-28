@@ -1,0 +1,40 @@
+header {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: red;
+  height: 30%;
+  a,
+  button {
+    color: red;
+    border: none;
+    background: none;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $interactive;
+    }
+  }
+
+  nav {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: center;
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      list-style-type: none;
+      a {
+        color: red;
+        text-decoration: none;
+      }
+    }
+  }
+}
