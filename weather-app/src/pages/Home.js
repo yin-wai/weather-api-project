@@ -74,9 +74,10 @@ console.log('response.data.location', response.data.location)
 console.log('response.data.current.condition.text', response.data.current.condition.text)
 console.log('response.data.forecast', response.data.forecast.forecastday)
 const forecastDay = response.data.forecast.forecastday
-const hour = forecastDay[0].hour
 
+// const hour = forecastDay[0].hour
 // setTimeCondition(hour[0].condition.text)
+
 setForecast(forecastDay[0].day.condition.text)
 setLocations(response.data.location)
 setCurrentCondition(response.data.current.condition.text)
