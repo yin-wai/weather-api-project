@@ -19,21 +19,20 @@ header {
     &:hover {
       color: $interactive;
     }
-  }
-
-  nav {
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content: center;
-    ul {
-      width: 100%;
+    nav {
       display: flex;
-      justify-content: space-evenly;
-      list-style-type: none;
-      a {
-        color: red;
-        text-decoration: none;
+      width: 80%;
+      flex-direction: row;
+      justify-content: center;
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        list-style-type: none;
+        a {
+          color: red;
+          text-decoration: none;
+        }
       }
     }
   }

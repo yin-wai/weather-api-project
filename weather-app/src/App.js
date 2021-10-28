@@ -9,7 +9,6 @@ import Home2 from './pages/Home2';
 function App() {
   return (
     <Router>
-    <div>
       <header>
         <Nav />
       </header>
@@ -19,7 +18,6 @@ function App() {
           <Route path='/' component={Home2} />
         </Switch>
       </main>
-    </div>
     </Router>
   );
 }
