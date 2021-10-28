@@ -34,14 +34,14 @@ const Background = () => {
       }, [])
 
       if (!weather) return null
-      const clouds = getCloudiness(weather.current.cloud)
-      const rain = willItRain(weather.forecast.forecastday[0].day.daily_will_it_rain)
-      const snow = willItSnow(weather.forecast.forecastday[0].day.daily_will_it_snow)
+      const cloudsProp = getCloudiness(weather.current.cloud)
+      const rainProp = willItRain(weather.forecast.forecastday[0].day.daily_will_it_rain)
+      const snowProp = willItSnow(weather.forecast.forecastday[0].day.daily_will_it_snow)
  
     return (
         <div id="screen">
         style={{
-            backgroundImage:`url(${selectBackground(cloudsProp)})`,
+            backgroundImage:`url(${selectBackground(cloudsProp, rainProp, snowProp)})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             }}        
