@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import ForecastDay from '../components/ForecastDay'
-import GetTime from '../helper/GetTime'
+import { trimSunrise, trimSunset } from '../helper/GetTime'
 
 const Forecast = () => {
     const [locations, setLocations] = useState('')
@@ -15,6 +15,9 @@ const Forecast = () => {
         language: 'eng',
         days: '',
     })
+    const [currentCondition, setCurrentCondition] = useState('')
+    const [forecastDay, setForecastDay] = useState('')
+    const [forecasts, setForecasts] = useState([])
     
     const handleLocationChange = (event) => {
         const { name, value } = event.target
@@ -48,9 +51,11 @@ try {
   console.log("reach.try")
 const response = await axios(config)
 console.log(response)
-// const forecastDay = response.data.forecast.forecastday
-// console.log('response.data.location', response.data.forecast)
+const forecastDay = response.data.forecast.forecastday
+setForecastDay(forecastDay[0])
 setLocations(response.data.location)
+setCurrentCondition(response.data.current.condition.text)
+setForecasts(forecastDay)
 // console.log(locations)
 // console.log(forecastDay)
 } catch (err) {
@@ -84,15 +89,16 @@ fetchLocation()
         </div>
         :
         <div className='forecast-result'>
-          <div>
-            <div>
-              <span>
-                <span>The weather in {weather.location.name} is {weather.current.condition.text.toLowerCase()} </span>
+          <div className='display-flex-row'>
+            <div className='main-container'>
+              <span id="heading" className="block">
+                <span className='main-display-text'>The weather in {locations.name} is {currentCondition.toLowerCase()} </span>
               </span>
-              <span>
-                <span>Sunrise: {trimSunrise(weather.forecast.forecastday[0].astro.sunrise)}</span>
-                <span>Sunset: {trimSunset(weather.forecast.forecastday[0].astro.sunset)}</span>
+              <span id="heading" className="forecast-text-astro flex-space-between">
+                <span>Sunrise: {trimSunrise(forecastDay.astro.sunrise)}</span>
+                <span>Sunset: {trimSunset(forecastDay.astro.sunset)}</span>
               </span>
+              <button onClick={handleFormReset}>Search another location</button>
             </div>
             <div className="forecast-container">
               {forecasts.map(forecast => (
@@ -100,7 +106,6 @@ fetchLocation()
               ))}
             </div>
           </div>
-             <button onClick={handleFormReset}>Search another location</button>
         </div>
         }
        </div>

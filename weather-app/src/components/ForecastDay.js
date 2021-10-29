@@ -10,19 +10,20 @@ const ForecastDay = ({ day, date, hour }) => {
   }
   const displayShowHide = displayExtra ? 'Expand' : 'Condense'
 
-  console.log(hour)
   return (
     <>
       <div>
-        <div>
-          <div><span><span>Date: {correctFormat(date)}</span><span>{day.condition.text.toLowerCase()} </span></span></div>
-          <div><span><span>Average Temperature:</span><span>{day.avgtemp_c} &#8451;</span></span></div>
-          <div><span><span>Average Humidity:</span><span>{day.avghumidity} g/kg</span></span></div>
-          <div><span><span>Chance of rain:</span><span>{day.daily_chance_of_rain} &#37;</span></span></div>
-          <div><span><span>Chance of snow:</span><span>{day.daily_chance_of_snow} &#37;</span></span></div>
+        <div className="forecast-inner-outer-container">
+          <div className="forecast-inner-container">
+          <div><span className="forecast-text"><span>Date: {correctFormat(date)}</span><span>{day.condition.text.toLowerCase()} </span></span></div>
+          <div><span className="forecast-text"><span>Average Temperature:</span><span>{day.avgtemp_c} &#8451;</span></span></div>
+          <div><span className="forecast-text"><span>Average Humidity:</span><span>{day.avghumidity} g/kg</span></span></div>
+          <div><span className="forecast-text"><span>Chance of rain:</span><span>{day.daily_chance_of_rain} &#37;</span></span></div>
+          <div><span className="forecast-text forecast-bottom"><span>Chance of snow:</span><span>{day.daily_chance_of_snow} &#37;</span></span></div>
+          </div>
         </div>
-        <div>
-          <span onClick={toggleDisplay}>{displayShowHide}</span>
+        <div className="forecast-expanded">
+          <span className="forecase-options-text inline-block click" onClick={toggleDisplay}>{displayShowHide}</span>
         </div>
         {!displayExtra ?
           <>

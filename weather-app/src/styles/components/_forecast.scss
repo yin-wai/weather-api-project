@@ -54,6 +54,38 @@
     }
   }
 
+  .block {
+    display: block;
+  }
+
+  #heading {
+    @media only screen and (max-width: 1480px) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .main-container {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    @media only screen and (max-width: 2400px) {
+     left: 8%; 
+    }
+    @media only screen and (max-width: 2300px) {
+      left: 6%;
+    }
+    @media only screen and (max-width: 1800px) {
+      top: 50%;
+    }
+    @media only screen and (max-width: 1480px) {
+      top: 15%;
+    }
+  }
+  
+  .display-flex-row {
+    display: flex;
+  }
+
   .forecast-result {
     display: flex;
     flex-direction: column;
@@ -83,4 +115,49 @@
       }
     }
   }
+
+  .forecast-container {
+    position: absolute;
+    top: 32%;
+    left: 40%;
+    @media only screen and (max-width: 2400px) {
+      left: 38%;
+    }
+    @media only screen and (max-width: 2300px) {
+      left: 36%;
+    }
+    @media only screen and (max-width: 2200px) {
+      left: 32%;
+    }
+    @media only screen and (max-width: 1800px) {
+      left: 30%;
+    }
+    @media only screen and (max-width: 1480px) {
+      top: 35%;
+      left: 6%;
+    }
+  }
+
+  .forecast-inner-outer-container {
+    display: flex;
+  }
+  
+  .forecast-bottom {
+    margin-bottom: 60px;
+    @media only screen and (max-width: 1480px) {
+      margin-bottom: 20px;
+    }
+  }
+  
+  .forecast-expanded-div {
+    @include forecast-expanded-div;
+  }
+  
+  
+  
+  .history-display-flex {
+    @include history-display-flex;
+  }
 }
+
+
