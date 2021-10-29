@@ -7,7 +7,7 @@ const ForecastDayExtra = ({ hour }) => {
   console.log(hour)
   return (
     <>
-      <div className="forecast-expanded-title-div">
+      <div className="forecast-exapanded-title-div">
         <span className="forecast-expanded-title">Hour</span>
         <span className="forecast-expanded-title">Temp &#8451;</span>
         <span className="forecast-expanded-title">Rain &#37;</span>
