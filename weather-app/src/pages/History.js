@@ -148,8 +148,9 @@ fetchLocation()
             <div>
             <input type='submit' value='Submit' onClick={handleSubmit}/>
            </div>
+           <span>(Go back up to 7 days)</span>
           </form>
-          <span>(API limited to last 7 days)</span>
+          
         </div >
         :
         <div className='history-result'>
