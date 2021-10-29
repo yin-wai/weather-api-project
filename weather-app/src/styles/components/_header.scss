@@ -1,11 +1,11 @@
 header {
-  background-color: black;
+  background-color: lightblue;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: red;
+  color: grey;
   height: 20%;
   font-size: 48px;
   nav {
@@ -19,7 +19,7 @@ header {
       justify-content: space-evenly;
       list-style-type: none;
       a {
-        color: red;
+        color:grey;
         text-decoration: none;
       }
     }
