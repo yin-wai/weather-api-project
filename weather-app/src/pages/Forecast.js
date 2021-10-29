@@ -67,16 +67,15 @@ fetchLocation()
 }, [finalFormSubmit])
     return (
         <>
-        {/* <div className='forecast'> */}
+        <div className='forecast'>
         {!locations ?
         <div >
-        <form onSubmit={handleSubmit} className="inline-block home-form">
+        <form onSubmit={handleSubmit}>
           <div>
-            <input placeholder='Choose your location' onChange={handleLocationChange} name="location" value={formSubmit.location} className="home-input click"/>
+            <input placeholder='Choose your location' onChange={handleLocationChange} name="location" value={formSubmit.location}/>
             <input 
               onChange={handleLocationChange}
               value={formSubmit.days}
-              className="number-input main-text click"
               type="number"
               name="days"
               min="1"
@@ -84,7 +83,7 @@ fetchLocation()
             />
           </div>
           <div>
-            <input type='submit' value='Submit' onClick={handleSubmit} style={{ position: 'absolute', left: '-9999px' }} />
+            <input type='submit' value='Submit' onClick={handleSubmit}/>
           </div>
         </form>
         </div>
@@ -102,7 +101,7 @@ fetchLocation()
             </div>
           </div>
           }
-       
+       </div>
         </>
     )
 }
