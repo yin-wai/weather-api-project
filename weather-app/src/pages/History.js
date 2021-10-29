@@ -20,7 +20,7 @@ const History = () => {
     })
            
     const handleLocationChange = (event) => {
-       
+       console.log('reached')
         const { name, value } = event.target
     setFormSubmit({
       ...formSubmit,
@@ -32,7 +32,8 @@ const History = () => {
       console.log('formSubmitted')
         event.preventDefault()
         setFinalFormSubmit(formSubmit)
-        console.log(finalFormSubmit.date)
+        console.log('finalFormSubmit.date')
+        console.log(finalFormSubmit)
       }
 
       const handleFormReset = () => {
@@ -44,6 +45,7 @@ const History = () => {
       }
 
     useEffect(() => {
+      console.log('useEffect reached')
      async function fetchLocation() {
       const config = {
         method: 'get',
@@ -53,9 +55,14 @@ const History = () => {
 try {
 const response = await axios(config)
 const forecastDay = response.data.forecast.forecastday
-setTimeCondition(forecastDay[0].hour.condition.text)
+const hour = forecastDay[0].hour
+console.log(forecastDay)
+console.log(response.data)
+setTimeCondition(hour[0].condition.text)
 setLocations(response.data.location)
-setTimeTemperature(forecastDay[0].hour.temp_c)
+console.log(response.data)
+console.log(locations)
+setTimeTemperature(hour[0].temp_c)
 } catch (err) {}
 }
 fetchLocation()
