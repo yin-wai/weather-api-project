@@ -67,16 +67,16 @@ fetchLocation()
 }, [finalFormSubmit])
     return (
         <>
-        <div className='forecast'>
+        {/* <div className='forecast'> */}
         {!locations ?
         <div >
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="inline-block home-form">
           <div>
-            <input placeholder='Choose your location' onChange={handleLocationChange} name="location" value={formSubmit.location}/>
+            <input placeholder='Choose your location' onChange={handleLocationChange} name="location" value={formSubmit.location} className="home-input click"/>
             <input 
               onChange={handleLocationChange}
-              // onWheel={(event) => event.target.blur()}
               value={formSubmit.days}
+              className="number-input main-text click"
               type="number"
               name="days"
               min="1"
@@ -84,24 +84,16 @@ fetchLocation()
             />
           </div>
           <div>
-            <input type='submit' value='Submit' onClick={handleSubmit}/>
+            <input type='submit' value='Submit' onClick={handleSubmit} style={{ position: 'absolute', left: '-9999px' }} />
           </div>
         </form>
         </div>
         :
-        <div className='forecast-result'>
-          <div className='display-flex-row'>
+        <div className='display-flex-row'>
             <div className='main-container'>
-              <span id="heading" className="block">
-                <span className='main-display-text'>The weather in {locations.name} is {currentCondition.toLowerCase()} </span>
-              </span>
-              <span id="heading" className="forecast-text-astro flex-space-between">
-                <span>Sunrise: {trimSunrise(forecastDay.astro.sunrise)}</span>
-                <span>Sunset: {trimSunset(forecastDay.astro.sunset)}</span>
-              </span>
-              <div>
-              <button onClick={handleFormReset}>Search another location</button>
-              </div>
+              <span id="heading" className="block"><span className='main-display-text'>The weather in {locations.name} is {currentCondition.toLowerCase()} </span></span>
+              <span id="heading" className="forecast-text-astro flex-space-between"><span>Sunrise: {trimSunrise(forecastDay.astro.sunrise)}</span><span>Sunset: {trimSunset(forecastDay.astro.sunset)}</span></span>
+              <button className="main-options-text block click" onClick={handleFormReset}>Search another location</button>
             </div>
             <div className="forecast-container">
               {forecasts.map(forecast => (
@@ -109,9 +101,8 @@ fetchLocation()
               ))}
             </div>
           </div>
-        </div>
-        }
-       </div>
+          }
+       
         </>
     )
 }
