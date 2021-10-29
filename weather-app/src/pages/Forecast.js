@@ -60,16 +60,20 @@ fetchLocation()
         {!locations ?
         <div >
         <form onSubmit={handleSubmit}>
+          <div>
             <input placeholder='Choose your location' onChange={handleLocationChange} />
-               <input 
-               onChange={handleLocationChange}
-               onWheel={(event) => event.target.blur()}
-               className="selectingForecast"
-               type="number"
-               name="days"
-               min="1"
-               max="3"
-               />
+            <input 
+              onChange={handleLocationChange}
+              onWheel={(event) => event.target.blur()}
+              type="number"
+              name="days"
+              min="1"
+              max="3"
+            />
+          </div>
+          <div>
+            <input type='submit' value='Submit' onClick={handleSubmit}/>
+          </div>
         </form>
         </div>
         :
