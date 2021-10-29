@@ -35,6 +35,7 @@ const Forecast = () => {
     const handleFormReset = () => {
         setLocations('')
         setFormSubmit('')
+        setCurrentCondition('')
     }
 
     useEffect(() => {
@@ -98,7 +99,9 @@ fetchLocation()
                 <span>Sunrise: {trimSunrise(forecastDay.astro.sunrise)}</span>
                 <span>Sunset: {trimSunset(forecastDay.astro.sunset)}</span>
               </span>
+              <div>
               <button onClick={handleFormReset}>Search another location</button>
+              </div>
             </div>
             <div className="forecast-container">
               {forecasts.map(forecast => (
