@@ -190,6 +190,7 @@
 
 @mixin forecast-expanded-div {
   align-self: center;
+  align-self: center;
   display: flex;
   width: 80%;
   flex-direction: row;
@@ -226,6 +227,7 @@
 @mixin forecast-expanded {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   width: 20%;
+  align-self: center;
   font-weight: 700;
   color: #fff;
   font-size: large;
