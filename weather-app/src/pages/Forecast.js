@@ -5,15 +5,13 @@ const Forecast = () => {
     const [locations, setLocations] = useState('')
     const [formSubmit, setFormSubmit] = useState({
         location: '',
-        time: '12',
         language: '',
         days: '',
       })
     const [finalFormSubmit, setFinalFormSubmit] = useState({
         location: '',
-        time: '',
         language: 'eng',
-        days: '1',
+        days: '',
     })
     
     const handleLocationChange = (event) => {
@@ -35,21 +33,26 @@ const Forecast = () => {
     }
 
     useEffect(() => {
+      console.log("reach")
      async function fetchLocation() {
       const config = {
         method: 'get',
-        url: `http://api.weatherapi.com/v1/forecast.json?key=8b928a9753d74262887160151212610&q=${finalFormSubmit.location}&days=${finalFormSubmit.day}&aqi=yes&alerts=yes&lang=${finalFormSubmit.language}`,
+        url: `http://api.weatherapi.com/v1/forecast.json?key=8b928a9753d74262887160151212610&q=${finalFormSubmit.location}&days=${finalFormSubmit.days}&lang=${finalFormSubmit.language}`,
         headers: { 
                 'api': '8b928a9753d74262887160151212610'
              }
 };
 try {
+  console.log("reach.try")
 const response = await axios(config)
-const forecastDay = response.data.forecast.forecastday
-console.log('response.data.location', response.data.forecast)
-setLocations(response.data)
+console.log(response)
+// const forecastDay = response.data.forecast.forecastday
+// console.log('response.data.location', response.data.forecast)
+setLocations(response.data.location)
+// console.log(locations)
+// console.log(forecastDay)
 } catch (err) {
-    console.log('no weather')
+    console.log(err.response)
 }
 }
 fetchLocation()
@@ -61,10 +64,11 @@ fetchLocation()
         <div >
         <form onSubmit={handleSubmit}>
           <div>
-            <input placeholder='Choose your location' onChange={handleLocationChange} />
+            <input placeholder='Choose your location' onChange={handleLocationChange} name="location" value={formSubmit.location}/>
             <input 
               onChange={handleLocationChange}
-              onWheel={(event) => event.target.blur()}
+              // onWheel={(event) => event.target.blur()}
+              value={formSubmit.days}
               type="number"
               name="days"
               min="1"
@@ -78,7 +82,7 @@ fetchLocation()
         </div>
         :
         <div className='forecast-result'>
-            <p></p>
+            <p> In {locations.name} the next </p>
              <button onClick={handleFormReset}>Search another location</button>
         </div>
         }
