@@ -1,26 +1,26 @@
 import React from 'react'
 
-import { trimHourTime, wholeNumTemp, windDirection, windSpeed } from './helperFunctions/getTime'
+import { trimHourTime, wholeNumTemp, windDirection, windSpeed } from '../helper/GetTime'
 
 const ForecastDayExtra = ({ hour }) => {
 
   console.log(hour)
   return (
     <>
-      <div className="forecast-exapanded-title-div">
-        <span className="forecast-expanded-title">Hour</span>
-        <span className="forecast-expanded-title">Temp &#8451;</span>
-        <span className="forecast-expanded-title">Rain &#37;</span>
-        <span className="forecast-expanded-title">Wind Dir.</span>
-        <span className="forecast-expanded-title">Speed mph.</span>
+      <div>
+        <span>Hour</span>
+        <span>Temp &#8451;</span>
+        <span>Rain &#37;</span>
+        <span>Wind Dir.</span>
+        <span>Speed mph.</span>
       </div>
       {hour.map(specificHour => (
         <div key="{specificHour.time_epoch}" className="forecast-expanded-div">
-          <span className="forecast-expanded">{trimHourTime(specificHour.time)}</span>
-          <span className="forecast-expanded">{wholeNumTemp(specificHour.temp_c)}</span>
-          <span className="forecast-expanded">{specificHour.chance_of_rain}</span>
-          <span className="forecast-expanded">{windDirection(specificHour.wind_dir)}</span>
-          <span className="forecast-expanded">{windSpeed(specificHour.wind_mph)}</span>
+          <span>{trimHourTime(specificHour.time)}</span>
+          <span>{wholeNumTemp(specificHour.temp_c)}</span>
+          <span>{specificHour.chance_of_rain}</span>
+          <span>{windDirection(specificHour.wind_dir)}</span>
+          <span>{windSpeed(specificHour.wind_mph)}</span>
         </div>
       ))}
     </>

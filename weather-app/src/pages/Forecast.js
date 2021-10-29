@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import ForecastDay from '../components/ForecastDay'
+import GetTime from '../helper/GetTime'
 
 const Forecast = () => {
     const [locations, setLocations] = useState('')
@@ -82,11 +84,15 @@ fetchLocation()
         </div>
         :
         <div className='forecast-result'>
-          <div className="display-flex-row">
-            <div className="main-container">
-              <span id="heading" className="block"><span className="main-display-text">The weather in {weather.location.name} is {weather.current.condition.text.toLowerCase()} </span></span>
-              <span id="heading" className="forecast-text-astro flex-space-between"><span>Sunrise: {trimSunrise(weather.forecast.forecastday[0].astro.sunrise)}</span><span>Sunset: {trimSunset(weather.forecast.forecastday[0].astro.sunset)}</span></span>
-              <span className="main-options-text block click" onClick={resetForm}>New search</span>
+          <div>
+            <div>
+              <span>
+                <span>The weather in {weather.location.name} is {weather.current.condition.text.toLowerCase()} </span>
+              </span>
+              <span>
+                <span>Sunrise: {trimSunrise(weather.forecast.forecastday[0].astro.sunrise)}</span>
+                <span>Sunset: {trimSunset(weather.forecast.forecastday[0].astro.sunset)}</span>
+              </span>
             </div>
             <div className="forecast-container">
               {forecasts.map(forecast => (
