@@ -8,7 +8,7 @@ const History = () => {
     const [timeCondition, setTimeCondition] = useState('')
     const [formSubmit, setFormSubmit] = useState({
       location: '',
-      time: '12',
+      time: '15',
       language: '',
       date: '',
     })
@@ -104,6 +104,7 @@ fetchLocation()
         <option value='00'>12pm</option>
         </select>
         <select name='language' value={formSubmit.language} placeholder='Choose your language' onChange={handleLocationChange}>
+        <option value='eng'>English</option>
         <option value='bn'>Bengali</option>
         <option value='bg'>Bulgarian</option>
         <option value='zh'>Chinese Simplified</option>
@@ -111,7 +112,6 @@ fetchLocation()
         <option value='cs'>Czech</option>
         <option value='da'>Danish</option>
         <option value='nl'>Dutch</option>
-        <option value='eng'>English</option>
         <option value='fi'>Finnish</option>
         <option value='fr'>French</option>
         <option value='de'>German</option>
