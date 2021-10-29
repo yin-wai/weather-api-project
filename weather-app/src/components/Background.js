@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { useEffect } from 'react'
 
-import { getCloudiness, willItRain } from "./helper/getWeather"
-import { willItRain } from "./helper/getWeather"
-import { willItSnow } from "./helper/getWeather"
-import { selectBackground } from "./helper/SelectBackground"
+import { getCloudiness, willItRain } from "../helper/getWeather"
+import { willItRain } from "../helper/getWeather"
+import { willItSnow } from "../helper/getWeather"
+import { selectBackground } from "../helper/SelectBackground"
 
 const Background = () => {
     const [weather, setWeather] = useState('')

@@ -82,7 +82,18 @@ fetchLocation()
         </div>
         :
         <div className='forecast-result'>
-            <p> In {locations.name} the next </p>
+          <div className="display-flex-row">
+            <div className="main-container">
+              <span id="heading" className="block"><span className="main-display-text">The weather in {weather.location.name} is {weather.current.condition.text.toLowerCase()} </span></span>
+              <span id="heading" className="forecast-text-astro flex-space-between"><span>Sunrise: {trimSunrise(weather.forecast.forecastday[0].astro.sunrise)}</span><span>Sunset: {trimSunset(weather.forecast.forecastday[0].astro.sunset)}</span></span>
+              <span className="main-options-text block click" onClick={resetForm}>New search</span>
+            </div>
+            <div className="forecast-container">
+              {forecasts.map(forecast => (
+                <ForecastDay key={forecast.date} {...forecast} />
+              ))}
+            </div>
+          </div>
              <button onClick={handleFormReset}>Search another location</button>
         </div>
         }
