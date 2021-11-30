@@ -1,8 +1,7 @@
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { getCloudiness, willItRain } from "../helper/getWeather"
-import { willItRain } from "../helper/getWeather"
 import { willItSnow } from "../helper/getWeather"
 import { selectBackground } from "../helper/SelectBackground"
 
