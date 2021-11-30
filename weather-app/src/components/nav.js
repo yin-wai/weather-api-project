@@ -8,7 +8,9 @@ const Nav = () => {
       <li>
           <Link to='/'>Home</Link>
         </li>
-        
+        {/* <li>
+          <Link to='/forecast.json'>Forecast</Link>
+        </li> */}
         <li>
           <Link to='/forecast.json'>Forecast</Link>
         </li>
