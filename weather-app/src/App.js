@@ -13,14 +13,16 @@ function App() {
       <header>
         <Nav />
       </header>
-      <main>
-        <Switch>
-          <Route path="/forecast.json" component={Forecast2} />
-          <Route path="/history.json" component={History} />
-          <Route path="/astronomy.json" component={Astronomy} />
-          <Route path="/" component={Home2} />
-        </Switch>
-      </main>
+      <body>
+        <main>
+          <Switch>
+            <Route path="/forecast.json" component={Forecast2} />
+            <Route path="/history.json" component={History} />
+            <Route path="/astronomy.json" component={Astronomy} />
+            <Route path="/" component={Home2} />
+          </Switch>
+        </main>
+      </body>
     </Router>
   );
 }

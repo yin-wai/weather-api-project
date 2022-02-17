@@ -8,11 +8,12 @@
   background-size: cover;
   height: 100%;
   width: 100%;
-  div {
+  .forecast-form {
     display: flex;
     align-content: center;
     height: 100%;
-    width: 90%;
+    width: 100%;
+    margin-left: 0.4%;
     form {
       width: 100%;
       height: 80%;
@@ -53,134 +54,198 @@
       }
     }
   }
+}
 
-  .block {
-    display: block;
-  }
+.block {
+  display: block;
+}
 
-  #heading {
-    @media only screen and (max-width: 1480px) {
-      margin-bottom: 5px;
-    }
-  }
-
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 30%;
-    // position: absolute;
-    // top: 50%;
-    // left: 10%;
-    @media only screen and (max-width: 2400px) {
-      left: 8%;
-    }
-    @media only screen and (max-width: 2300px) {
-      left: 6%;
-    }
-    @media only screen and (max-width: 1800px) {
-      top: 50%;
-    }
-    @media only screen and (max-width: 1480px) {
-      top: 15%;
-    }
-  }
-
-  .display-flex-row {
-    display: flex;
-    width: 100%;
-  }
-
-  .forecast-result {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    p {
-      color: blue;
-      text-align: justify;
-      text-align-last: center;
-      font-size: 48px;
-      background: rgba(255, 255, 255, 0.4);
-      border-radius: 0.5rem;
-    }
-    button {
-      width: 100%;
-      height: 10%;
-      justify-self: center;
-      align-self: center;
-
-      border-radius: 0.5rem;
-      font-size: 17px;
-      color: blue;
-      background: rgba(255, 255, 255, 0.5);
-      &:hover {
-        box-shadow: 3px 3px 3px blue;
-        border-radius: 0.5rem;
-      }
-    }
-  }
-
-  .forecast-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    width: 70%;
-
-    // position: absolute;
-    // top: 32%;
-    // left: 40%;
-    @media only screen and (max-width: 2400px) {
-      left: 38%;
-    }
-    @media only screen and (max-width: 2300px) {
-      left: 36%;
-    }
-    @media only screen and (max-width: 2200px) {
-      left: 32%;
-    }
-    @media only screen and (max-width: 1800px) {
-      left: 30%;
-    }
-    @media only screen and (max-width: 1480px) {
-      top: 35%;
-      left: 6%;
-    }
-  }
-
-  .forecast-divs {
-    width: 20%;
-  }
-
-  // .forecast-expanded-div {
-  //   width: 60%;
-  //   display: flex;
-  //   flex-direction: row;
-  // }
-
-  .forecast-inner-outer-container {
-    display: flex;
-    width: 20%;
-    flex-direction: column;
-  }
-
-  .forecast-inner-container {
-    width: 100%;
-    flex-direction: column;
-  }
-  .forecast-bottom {
-    margin-bottom: 60px;
-    @media only screen and (max-width: 1480px) {
-      margin-bottom: 20px;
-    }
-  }
-
-  .forecast-expanded-div {
-    @include forecast-expanded-div;
-  }
-
-  .history-display-flex {
-    @include history-display-flex;
+#heading {
+  @media only screen and (max-width: 1480px) {
+    margin-bottom: 5px;
   }
 }
+
+.display-flex-row {
+  display: flex;
+  width: 100%;
+}
+
+.forecast-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+
+  // position: absolute;
+  // top: 32%;
+  // left: 40%;
+  @media only screen and (max-width: 2400px) {
+    left: 38%;
+  }
+  @media only screen and (max-width: 2300px) {
+    left: 36%;
+  }
+  @media only screen and (max-width: 2200px) {
+    left: 32%;
+  }
+  @media only screen and (max-width: 1800px) {
+    left: 30%;
+  }
+  @media only screen and (max-width: 1480px) {
+    top: 35%;
+    left: 6%;
+  }
+}
+
+.forecast-result {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 30%;
+  font-size: 1.3rem;
+  margin-bottom: 2%;
+  p {
+    color: blue;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0.5rem;
+    padding-left: 2%;
+  }
+  button {
+    width: 50%;
+    height: 10%;
+    justify-self: center;
+    align-self: center;
+    border-radius: 0.5rem;
+    color: blue;
+    background: rgba(255, 255, 255, 0.5);
+    &:hover {
+      box-shadow: 3px 3px 3px blue;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+.forecast-extra {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.weather-summary-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.weather-summary {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  width: 10%;
+  p {
+    margin: 0;
+  }
+}
+
+#expand-div {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.extra-weather-info-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3%;
+  width: 65%;
+}
+
+.extra-weather-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  width: 8%;
+  p {
+    margin: 0;
+  }
+}
+
+.extra-weather-info-result {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1%;
+  width: 90%;
+}
+
+.extra-weather-info-column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
+  width: 20%;
+  span {
+    margin: 0;
+  }
+}
+
+// .forecast-divs {
+//   width: 20%;
+// }
+
+// .main-container {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   width: 30%;
+//   // position: absolute;
+//   // top: 50%;
+//   // left: 10%;
+//   @media only screen and (max-width: 2400px) {
+//     left: 8%;
+//   }
+//   @media only screen and (max-width: 2300px) {
+//     left: 6%;
+//   }
+//   @media only screen and (max-width: 1800px) {
+//     top: 50%;
+//   }
+//   @media only screen and (max-width: 1480px) {
+//     top: 15%;
+//   }
+// }
+
+// .forecast-expanded-div {
+//   width: 60%;
+//   display: flex;
+//   flex-direction: row;
+// }
+
+//   .forecast-inner-outer-container {
+//     display: flex;
+//     width: 20%;
+//     flex-direction: column;
+//   }
+
+//   .forecast-inner-container {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+//   .forecast-bottom {
+//     margin-bottom: 60px;
+//     @media only screen and (max-width: 1480px) {
+//       margin-bottom: 20px;
+//     }
+//   }
+
+//   .forecast-expanded-div {
+//     @include forecast-expanded-div;
+//   }
+
+//   .history-display-flex {
+//     @include history-display-flex;
+//   }
+//
