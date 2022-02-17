@@ -3,7 +3,6 @@
 }
 
 body {
-  height: 100%;
   margin: 0;
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,14 +13,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-section {
-  height: 100vh;
-}
-
 main {
-  font-size: 2rem;
-  text-align: center;
-  height: 90%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -4,40 +4,9 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-<<<<<<< HEAD
-  color: red;
-  height: 30%;
-  a,
-  button {
-    color: red;
-    border: none;
-    background: none;
-    font-size: inherit;
-    font-family: inherit;
-    text-decoration: underline;
-
-    &:hover {
-      color: $interactive;
-    }
-    nav {
-      display: flex;
-      width: 80%;
-      flex-direction: row;
-      justify-content: center;
-      ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        list-style-type: none;
-        a {
-          color: red;
-          text-decoration: none;
-        }
-=======
   color: grey;
-  height: 10%;
-  font-size: 48px;
+  font-size: 1rem;
+  font-weight: bold;
   nav {
     display: flex;
     width: 80%;
@@ -51,7 +20,6 @@ header {
       a {
         color: grey;
         text-decoration: none;
->>>>>>> 5b8d2954f0b6fe1c89274bf38894803b10fea7c6
       }
     }
   }
