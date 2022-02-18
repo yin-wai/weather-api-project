@@ -13,14 +13,18 @@ const ForecastDay2 = ({ day, date, hour }) => {
     <>
       <div className="weather-summary-container">
         <div className="weather-summary">
-          <p>Date: {correctFormat(date)}</p>
+          <p>
+            Date: <span className="bold">{correctFormat(date)}</span>
+          </p>
           <p>Average Temperature:</p>
           <p>Average Humidity:</p>
           <p>Chance of rain:</p>
           <p>Chance of snow:</p>
         </div>
         <div className="weather-summary">
-          <p>{day.condition.text.toLowerCase()}</p>
+          <p>
+            <span className="bold">{day.condition.text.toLowerCase()}</span>
+          </p>
           <p>{day.avgtemp_c} &#8451;</p>
           <p>{day.avghumidity} g/kg</p>
           <p>{day.daily_chance_of_rain} &#37;</p>

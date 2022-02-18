@@ -5,7 +5,7 @@ header {
   align-items: center;
   justify-content: center;
   color: grey;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   nav {
     display: flex;
@@ -20,6 +20,12 @@ header {
       a {
         color: grey;
         text-decoration: none;
+        &:hover {
+          border-radius: 0.5rem;
+          scale: 1.1;
+          color: blue;
+          font-weight: bolder;
+        }
       }
     }
   }

@@ -6,6 +6,7 @@ import Astronomy from "./pages/Astronomy";
 import "./App.css";
 import Home2 from "./pages/Home2";
 import Forecast2 from "./pages/Forecast2";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Switch>
         </main>
       </body>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   );
 }

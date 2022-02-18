@@ -95,11 +95,21 @@ const Forecast2 = () => {
           <div className="forecast-container">
             <div className="forecast-result">
               <p>
-                The weather in {locations.name} is{" "}
-                {currentCondition.toLowerCase()}{" "}
+                The weather in <span className="bold">{locations.name}</span> is{" "}
+                <span className="italic">{currentCondition.toLowerCase()}</span>{" "}
               </p>
-              <p>Sunrise: {trimSunrise(forecastDay.astro.sunrise)}</p>
-              <p>Sunset: {trimSunset(forecastDay.astro.sunset)}</p>
+              <p>
+                Sunrise:{" "}
+                <span className="bold">
+                  {trimSunrise(forecastDay.astro.sunrise)}
+                </span>
+              </p>
+              <p>
+                Sunset:{" "}
+                <span className="bold">
+                  {trimSunset(forecastDay.astro.sunset)}
+                </span>
+              </p>
               <button onClick={handleFormReset}>Search another location</button>
             </div>
             <div className="forecast-extra">

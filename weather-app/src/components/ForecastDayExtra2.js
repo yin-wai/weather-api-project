@@ -13,7 +13,7 @@ const ForecastDayExtra2 = ({ hour }) => {
     <>
       <div className="extra-weather-info-container">
         <div className="extra-weather-info">
-          <span>Hour</span>
+          <span className="bold">Hour</span>
           <span>Temp &#8451;</span>
           <span>Rain &#37;</span>
           <span>Wind Dir.</span>
@@ -25,7 +25,7 @@ const ForecastDayExtra2 = ({ hour }) => {
               className="extra-weather-info-column"
               key="{specificHour.time_epoch}"
             >
-              <span>{trimHourTime(specificHour.time)}</span>
+              <span className="bold">{trimHourTime(specificHour.time)}</span>
               <span>{wholeNumTemp(specificHour.temp_c)}</span>
               <span>{specificHour.chance_of_rain}</span>
               <span>{windDirection(specificHour.wind_dir)}</span>
