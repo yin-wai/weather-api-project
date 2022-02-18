@@ -4,8 +4,8 @@ import History from "./pages/History";
 import Nav from "./components/Nav";
 import Astronomy from "./pages/Astronomy";
 import "./App.css";
-import Home2 from "./pages/Home2";
-import Forecast2 from "./pages/Forecast2";
+import Home from "./pages/Home";
+import Forecast from "./pages/Forecast";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,10 +17,10 @@ function App() {
       <body>
         <main>
           <Switch>
-            <Route path="/forecast.json" component={Forecast2} />
+            <Route path="/forecast.json" component={Forecast} />
             <Route path="/history.json" component={History} />
             <Route path="/astronomy.json" component={Astronomy} />
-            <Route path="/" component={Home2} />
+            <Route path="/" component={Home} />
           </Switch>
         </main>
       </body>
